@@ -1,0 +1,36 @@
+# dependencies
+node_modules/
+
+# local temp
+.lark-temp/
+.tmp/
+tmp/
+*.tmp
+*.log
+
+# generated runtime files
+outputs/temp/
+outputs/**/tmp_*/
+outputs/**/tmp-*/
+outputs/**/tmp_upserts*/
+
+# secrets and local configs
+.env
+.env.*
+*.token
+secrets/
+credentials/
+
+# operating system
+.DS_Store
+Thumbs.db
+
+# private media by default
+materials/raw/
+materials/incoming/
+materials/organized/
+materials/music/
+materials/references/
+
+# generated videos can be large or private
+outputs/videos/

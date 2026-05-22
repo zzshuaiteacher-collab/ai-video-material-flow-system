@@ -70,6 +70,10 @@ skills/blueprints/
 5. 按 [docs/MVP协作执行工作流模板.md](./docs/MVP协作执行工作流模板.md) 跑第一条 MVP。
 6. 当本地 MVP 跑通后，再接入协作表和多 Agent。
 
+如果你使用飞书多维表格，请参考：
+
+[docs/飞书多维表格搭建指南.md](./docs/飞书多维表格搭建指南.md)
+
 如果想先了解每个文件的用途，阅读：
 
 [项目包清单.md](./项目包清单.md)
@@ -85,6 +89,7 @@ project-root/
 │  ├─ MVP协作执行工作流模板.md
 │  ├─ 多Agent角色与模型配置.md
 │  ├─ 协作表字段设计.md
+│  ├─ 飞书多维表格搭建指南.md
 │  ├─ 合规审核规则模板.md
 │  └─ Skill沉淀规则.md
 ├─ templates/

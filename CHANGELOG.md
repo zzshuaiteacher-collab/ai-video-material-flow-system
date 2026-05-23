@@ -20,3 +20,5 @@
 - Quick start guide.
 - Installation and usage guide.
 - Roadmap.
+- Fully fictional bakery example project.
+- README clarification that the default operating environment is Feishu Base + Codex.

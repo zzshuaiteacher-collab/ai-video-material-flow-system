@@ -9,8 +9,8 @@
 | Skill | 说明 |
 | --- | --- |
 | `blueprints/material-flow-organizer` | 素材扫描、命名、分类、首次整理、增量整理 |
-| `blueprints/reference-video-decomposer` | 参考视频拆解、关键帧、节奏、模板提炼 |
-| `blueprints/short-video-compliance-guard` | 内容生产前置合规、AI 初审、人工终审护栏 |
+| `blueprints/reference-video-decomposer` | 供内容生产 Agent 做参考素材拆解、写作标准与模板提炼 |
+| `blueprints/short-video-compliance-guard` | 内容生产前置合规、自检与用户终审护栏 |
 
 ## 使用方式
 

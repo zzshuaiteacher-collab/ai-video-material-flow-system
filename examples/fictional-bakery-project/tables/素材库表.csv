@@ -1,0 +1,5 @@
+资产编号,资产名称,资产类型,分类,路径或链接,可用状态,风险标签,适用场景,备注,最后更新
+A001,吐司揉面近景,已整理素材,制作,materials/organized/production/toast_kneading_001.mp4,可用,,制作过程,虚构素材路径,2026-05-23
+A002,吐司出炉蒸汽,已整理素材,成品,materials/organized/result/toast_oven_steam_001.mp4,可用,,产品展示,虚构素材路径,2026-05-23
+A003,顾客排队远景,原始视频,顾客,materials/raw/customer_queue_001.mp4,待确认,顾客正脸,待人工确认,如使用需裁切或打码,2026-05-23
+A004,轻快烘焙背景音乐,音乐,音乐,materials/music/bakery_light_demo.mp3,待确认,版权,产品展示背景,仅作测试音乐,2026-05-23

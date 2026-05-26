@@ -11,6 +11,8 @@ Transform finished reference videos into reusable editing guidance: structure, r
 
 This skill is project-agnostic. Do not bind the output to one brand unless the user explicitly asks.
 
+In this system, this skill belongs to the content production role. The material organizer only sorts usable project assets and does not analyze references or define writing standards.
+
 ## Inputs
 
 Possible inputs:
@@ -52,6 +54,7 @@ Possible inputs:
 
 5. Produce an executable template.
    - Segment formula
+   - Writing and subtitle standard
    - Required material categories
    - Target duration
    - Output format
@@ -136,5 +139,6 @@ production action
 - Template recommendation
 - Shot formula
 - Subtitle style guide
+- Writing standard
 - Editing rhythm notes
 - Human confirmation list

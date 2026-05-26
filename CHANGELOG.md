@@ -1,5 +1,13 @@
 # Changelog
 
+## 2026-05-26 (v2)
+
+### Changed
+
+- Reduced the default operating model to controller, material, and content-production Agents; removed the review/publishing Agent role.
+- Assigned reference-material analysis and writing/clip standards to the content-production Agent; limited the material Agent to asset organization.
+- Redesigned Feishu templates around `视频任务总表`, `素材库表`, and `Agent 执行记录表`, with human final review and publishing decisions recorded by the controller.
+
 ## 2026-05-26
 
 ### Changed

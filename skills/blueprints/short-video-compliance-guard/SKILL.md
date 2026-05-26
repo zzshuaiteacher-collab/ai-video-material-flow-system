@@ -1,6 +1,6 @@
 ---
 name: short-video-compliance-guard
-description: Provide compliance guardrails for short-form video planning, production, review, publishing, and archiving. Use for subtitle, caption, music, privacy, customer image, price, claims, advertising wording, AI pre-review, human final-review checklist, and release gating.
+description: Provide compliance guardrails for short-form video planning, production, review, publishing, and archiving. Use for subtitle, caption, music, privacy, customer image, price, claims, advertising wording, content-production self-check, human final-review checklist, and release gating.
 ---
 
 # Short Video Compliance Guard
@@ -15,8 +15,8 @@ When this skill is active, the workflow must:
 
 1. Read project rules before selecting topic, material, subtitle, or music.
 2. Avoid high-risk content during task planning.
-3. Produce AI pre-review after draft generation.
-4. Prepare human final-review checklist before release.
+3. Produce content-production compliance self-check after draft generation.
+4. Prepare user final-review checklist before release.
 
 ## When To Use
 
@@ -26,7 +26,7 @@ Use when the user asks to:
 - Create or update video compliance rules.
 - Generate a short-video edit plan where compliance matters.
 - Audit subtitles, captions, music, privacy, customer images, prices, claims, or advertising wording.
-- Create AI review reports, human review checklists, release gates, or publishing records.
+- Create compliance self-check reports, human review checklists, release gates, or publishing records.
 
 ## Pre-Production Guard
 
@@ -74,7 +74,7 @@ Require confirmation:
 - Promotion or discount videos
 - Health, authority, exclusive, sold out, queue, or similar claims
 
-## AI Compliance Pre-Review
+## Content Compliance Self-Check
 
 After draft generation:
 
@@ -83,11 +83,11 @@ After draft generation:
 3. Review music/source/authorization status.
 4. Review whether content violated pre-production constraints.
 5. Classify risks as high, medium, low, or none.
-6. Output a structured AI pre-review report.
+6. Output a structured compliance self-check report.
 
 ## Human Final Review Gate
 
-AI review never replaces human final review.
+Content-production self-check never replaces user final review.
 
 Human review must confirm:
 
@@ -103,7 +103,7 @@ If high-risk issues remain, do not mark the video publishable.
 
 ## Output Format
 
-AI pre-review report:
+Compliance self-check report:
 
 ```text
 Conclusion: pass / modify / uncertain

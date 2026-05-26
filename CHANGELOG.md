@@ -1,5 +1,13 @@
 # Changelog
 
+## 2026-05-26 (v3)
+
+### Changed
+
+- Reframed `README.md` as the controller Agent's primary entrypoint instead of a user-oriented introduction page.
+- Added controller startup reading order, customer communication duties, stage gates, and minimum system configuration to the repository homepage.
+- Repositioned `docs/快速开始.md` as customer-facing material the controller may send after taking ownership of setup.
+
 ## 2026-05-26 (v2)
 
 ### Changed

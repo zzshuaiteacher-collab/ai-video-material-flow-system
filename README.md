@@ -136,6 +136,7 @@ templates/tables/
 | `docs/项目说明文档模板.md` | 初始化客户项目文档 |
 | `docs/飞书多维表格搭建指南.md` | 配置飞书协作表 |
 | `templates/agent-prompts/` | 创建素材、内容生产 Agent |
+| `templates/素材命名与归档标准模板.md` | 初始化素材命名规则，并交给素材 Agent 执行 |
 | `docs/MVP协作执行工作流模板.md` | 推进第一条完整视频 |
 | `templates/checklists/` | 人工终审和总控复盘 |
 | `skills/blueprints/` | 在客户确认后沉淀可复用流程 |

@@ -1,5 +1,13 @@
 # Changelog
 
+## 2026-05-27
+
+### Changed
+
+- Replaced the material naming pattern with the concise Chinese format `品牌名_日期_景别-画面内容`, appending a sequence only when names collide.
+- Converted the public `material-flow-organizer` skill blueprint into a Chinese template and added `templates/素材命名与归档标准模板.md`.
+- Updated the material Agent prompt and MVP workflow so naming previews follow the new standard before any confirmed file operation.
+
 ## 2026-05-26 (v3)
 
 ### Changed

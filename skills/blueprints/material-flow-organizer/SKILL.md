@@ -1,129 +1,127 @@
 ---
 name: material-flow-organizer
-description: Organize reusable media material flows for video projects. Use when the user asks to scan material folders, standardize names, classify newly added media, create a material ledger, detect duplicates, or maintain first-time and incremental material organization workflows.
+description: 整理视频项目中的素材流。用于扫描素材文件夹、按“品牌名_日期_景别-画面内容”规则生成重命名预案、分类新增素材、输出素材台账、识别重复文件，以及处理首次整理或增量整理任务。
 ---
 
-# Material Flow Organizer
+# 素材流整理 Skill 模板
 
-## Purpose
+## 目标
 
-Turn loose media files into a reusable material library: scanned, named, classified, reviewable, and ready for editing.
+把零散素材整理成可复用的素材库：可识别、可分类、可追溯、可直接交给内容生产 Agent 使用。
 
-This skill is project-agnostic. Do not hard-code one brand, one folder, or one local machine path.
+本 skill 是通用蓝图，不绑定任何品牌、目录或机器路径。总控 Agent 应在初始化项目时收集品牌名、素材位置与日期口径，再交给素材 Agent 使用。
 
-## Required Rule
-
-Always use a two-step workflow:
+## 必须遵守的确认门
 
 ```text
-preview plan
-→ user confirmation
-→ execute rename or move
+扫描素材并生成命名/分类预案
+→ 用户确认
+→ 仅执行已确认的重命名和移动
 ```
 
-Do not move, rename, delete, overwrite, or deduplicate original files during preview.
+预览阶段不得移动、重命名、删除、覆盖或自动去重原始文件。
 
-## Modes
+## 执行模式
 
-### First-Time Organization
+### 首次整理
 
-Use when:
+适用于素材集中在未分类目录、项目尚未形成命名规则的情况。
 
-- Materials are in one loose folder.
-- No stable folder taxonomy exists.
-- The user wants a naming and classification standard.
+1. 扫描素材并记录路径、扩展名、大小、时长、分辨率和所在目录。
+2. 读取项目说明文档与用户提供的命名要求。
+3. 提出分类目录，保留 `99_待分类` 作为低置信度入口。
+4. 按默认命名规则生成新文件名预案。
+5. 输出素材台账和执行清单。
+6. 得到用户明确确认后再执行。
 
-Steps:
+### 增量整理
 
-1. Scan media files.
-2. Capture path, extension, size, duration, resolution, and existing folder.
-3. Infer project naming rules from documents or user instructions.
-4. Propose folder taxonomy.
-5. Propose standardized names.
-6. Generate a reviewable ledger.
-7. Wait for user confirmation.
-8. Execute only confirmed moves and renames.
+适用于项目已有分类目录，用户补充了新素材的情况。
 
-### Incremental Organization
+1. 读取已有目录和素材台账。
+2. 识别仅新增或尚未整理的文件。
+3. 沿用项目已确认的品牌名、日期和画面描述口径。
+4. 生成本批新增素材的预览清单。
+5. 用户确认后执行改名和归档，并更新台账。
 
-Use when:
+## 默认命名规则
 
-- Existing category folders already exist.
-- The user added new files.
-- The task is to process only newly added files.
-
-Steps:
-
-1. Read existing folder structure.
-2. Identify new or unorganized files.
-3. Apply existing naming rules.
-4. Continue numbering without collisions.
-5. Generate incremental preview.
-6. Execute after confirmation.
-7. Update ledger and manifest.
-
-## Suggested Categories
-
-Adapt to the project, but start from:
-
-- product close-up
-- production/process
-- serving/result
-- environment
-- people/customer
-- takeaway/packaging
-- price/menu
-- talking head
-- music
-- reference
-- output
-- archive
-- `99_待分类`
-
-## Naming Pattern
-
-Recommended generic pattern:
+视频与图片素材统一命名为：
 
 ```text
-项目或品牌_日期_素材类型_主体_镜头动作_序号_规格.扩展名
+品牌名_日期_景别-画面内容.扩展名
 ```
 
-Example:
+示例：
 
 ```text
-ProjectA_20260521_raw_product_closeup_001_1080x1920.mp4
+示例品牌_20260527_特写-切牛肉.mp4
+示例品牌_20260527_近景-IP工作.mp4
+示例品牌_20260527_全景-门店大厅.jpg
 ```
 
-## Confidence Rules
-
-| Confidence | Meaning | Action |
+| 字段 | 规则 | 示例 |
 | --- | --- | --- |
-| High | File clearly matches category and subject | Propose category directly |
-| Medium | Likely match but subject/action may be ambiguous | Mark as pending confirmation |
-| Low | Content is unclear or metadata is insufficient | Put into `99_待分类` |
+| 品牌名 | 使用客户确认的品牌名或项目名 | 示例品牌 |
+| 日期 | 拍摄日期优先；无法确认时使用接收日期，格式 `YYYYMMDD` | 20260527 |
+| 景别 | 使用 `特写`、`近景`、`中景`、`全景` 等稳定词 | 特写 |
+| 画面内容 | 简明写出主体或动作 | 切牛肉、IP工作 |
 
-## Safety Rules
+分辨率、时长、原始/已整理状态和风险标签不写入文件名，统一记录在素材库表或素材台账中。
 
-- Never overwrite files.
-- Never delete duplicates automatically.
-- Never treat reference videos as publishable material unless the user says so.
-- Never assume music is licensed.
-- Keep original files untouched until explicit confirmation.
-- Before moving files, verify paths stay within the intended project folder.
-- Record every move or rename in a manifest.
+同一天、同一景别和内容出现重名时，追加三位序号：
 
-## Outputs
+```text
+示例品牌_20260527_特写-切牛肉_001.mp4
+示例品牌_20260527_特写-切牛肉_002.mp4
+```
 
-Preview output:
+音乐没有景别，以 `音乐` 替代景别：
 
-- Material ledger
-- Classification plan
-- Naming standard summary
-- Pending confirmations
+```text
+示例品牌_20260527_音乐-轻快.mp3
+```
 
-Execution output:
+参考素材不得混入可发布素材，以 `参考` 替代景别：
 
-- Updated folder structure
-- Move/rename manifest
-- Updated material ledger
-- Files organized, skipped, and pending
+```text
+示例品牌_20260527_参考-餐饮快剪.mp4
+```
+
+可复制的项目级标准文档见：
+
+```text
+templates/素材命名与归档标准模板.md
+```
+
+## 分类置信度
+
+| 置信度 | 判断 | 动作 |
+| --- | --- | --- |
+| 高 | 画面内容和分类清楚 | 直接提出分类与命名建议 |
+| 中 | 分类大致明确，但描述存在歧义 | 标记 `待确认` |
+| 低 | 内容不清、疑似重复或信息不足 | 放入 `99_待分类` |
+
+## 安全规则
+
+- 不覆盖任何已有文件。
+- 不自动删除疑似重复文件。
+- 不把参考素材当作可发布素材。
+- 不默认音乐已取得授权。
+- 移动前确认源路径和目标路径都属于用户指定的项目目录。
+- 执行后在台账中记录每一次移动和重命名结果。
+
+## 输出
+
+预览阶段：
+
+- 素材台账。
+- 分类与命名预案。
+- 待用户确认清单。
+
+执行阶段：
+
+- 已整理目录结构。
+- 移动/重命名执行清单。
+- 更新后的素材台账。
+- 已整理、跳过、待确认素材汇总。
